@@ -93,11 +93,7 @@ public class AzureMLBESClient {
         return apiUrl + action + "?api-version=" + apiVersion;
     }
 
-    private String sampleDataFile() {
-        return new String("MovieId, Rating\n1,10\n,3,6\n4,7\n5,4\n6,6\n7,2\n8,5\n9,10\n10,4");
-    }
-
-    public void uploadInputDataset(String filename) throws URISyntaxException, InvalidKeyException, StorageException, IOException {
+    public void uploadInputDataset(String filename, String inputDataset) throws URISyntaxException, InvalidKeyException, StorageException, IOException {
         if (verbose) {
             System.out.println("Upload input dataset ....");
         }
@@ -107,8 +103,7 @@ public class AzureMLBESClient {
         container.createIfNotExists();
 
         CloudBlockBlob blob = container.getBlockBlobReference(filename);
-        String sampleData = sampleDataFile();
-        blob.upload(new ByteArrayInputStream(sampleData.getBytes()), sampleData.length());
+        blob.upload(new ByteArrayInputStream(inputDataset.getBytes()), inputDataset.length());
     }
 
     public void downloadDataset(String filename, String outputFilePath) throws URISyntaxException, InvalidKeyException, StorageException, IOException {
