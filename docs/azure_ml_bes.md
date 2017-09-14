@@ -14,8 +14,8 @@ In Azure Machine Learning Studio, you can combine different modules (e.g. for da
 
 Example Details
 ---------------
-Machine Learning module : R Script Module
-Storage for input and output data : Azure Blob
+- Machine Learning module : R Script Module
+- Storage for input and output data : Azure Blob
 
 Requirements
 ------------------
