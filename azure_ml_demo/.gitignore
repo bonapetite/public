@@ -1,6 +1,0 @@
-.idea/
-target/
-*.iml
-src/resources/my*.properties
-azureMLOutput.csv
-**/*.*~
